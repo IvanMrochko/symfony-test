@@ -16,6 +16,7 @@ const flatObject = (data) => {
 const useJSON = (initial) => {
     let [state, setState] = useState({});
 
+    //init all inner object by {[key - stringify inside object value]: true||false - expand or colapse}
     if (Object.keys(state).length === 0) {
         let strInit = JSON.stringify(initial);
         state = { [strInit]: false };

@@ -18,7 +18,7 @@ const treeStatus = {
     },
 };
 const JSONTree = ({ data = {} }) => {
-    const [cursor, setCursor, setAll] = useJSON(data);
+    const [cursor, setCursor, setAll] = useJSON(data); //Task 2: custom hook for json object
     const [allStatus, setAllStatus] = useState(treeStatus.expandAll)
 
 
