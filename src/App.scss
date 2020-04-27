@@ -1,0 +1,23 @@
+.app {
+  height: 100vh;
+  width:100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.container {
+  padding: 100px 0 ;
+  display: grid;
+  grid-row-gap: 30px
+}
+form {
+  display: grid;
+  grid-row-gap: 20px;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap:50px;
+  button{
+    max-height: 50px
+  }
+  input {
+    cursor:pointer;
+  }
+}

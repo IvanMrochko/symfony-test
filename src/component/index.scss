@@ -1,0 +1,49 @@
+.list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    
+    &__icon {
+        border-radius: 50% ;
+        border: 1px solid #194bf324;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: flex;
+        position: relative;
+        span {
+            display: block;
+            position: absolute;
+            width: 150px;
+            left:30px  ;
+            font-size: 12px;
+        }
+    }
+    &-item {
+        display: none;
+        padding: 0;
+            &.active {
+                display: flex;
+                flex-direction: column;    
+            }
+        &__element{
+            padding: 10px 10px;
+            background: #194bf324;
+            border-radius:10px;
+            margin-bottom: 10px;
+            margin-left:  40px;
+            font-size:14px;
+
+            span {
+                font-size:10px;
+                color: darkblue;
+                margin-right: 5px ;
+                &:not(:first-child){
+                    margin-left: 10px;
+                }
+
+            }
+        }   
+    }
+}
