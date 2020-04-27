@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import RemoveIcon from '@material-ui/icons/Remove';
+import PropTypes from 'prop-types'
 import { useJSON } from './useObject';
 import './index.scss';
 import { log } from 'util';
@@ -78,5 +79,7 @@ const JSONTree = ({ data = {} }) => {
         </>
     )
 }
-
+JSONTree.propTypes = {
+    data: PropTypes.object.isRequired
+}
 export default React.memo(JSONTree);
