@@ -7,12 +7,14 @@ import './App.scss';
 function App() {
   const [jsonFile, setJsonFile] = useState({});
   const [isSubmit, setSumbit] = useState(false);
-  const fileReader = new FileReader();
-  fileReader.onload = (event) => {
-    setJsonFile(JSON.parse(event.target.result));
-  }
+
 
   const onChangeJson = (event) => {
+    setSumbit(false);
+    const fileReader = new FileReader();
+    fileReader.onload = (event) => {
+      setJsonFile(JSON.parse(event.target.result));
+    }
     fileReader.readAsText(event.target.files[0]);
   }
 
@@ -21,7 +23,6 @@ function App() {
     if (!isSubmit)
       setSumbit(true);
   }
-
   return (
     <div className="app" >
       <div className="container">
@@ -32,10 +33,10 @@ function App() {
             Form json tree
           </Button>
         </form>
-        {isSubmit && <JSONTree data={jsonFile} />}
+        {isSubmit && <JSONTree data={jsonFile} key={jsonFile} />}
       </div>
     </div>
   );
 }
 
-export default React.memo(App);
+export default App;

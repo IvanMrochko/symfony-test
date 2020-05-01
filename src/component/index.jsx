@@ -37,7 +37,7 @@ const JSONTree = ({ data = {} }) => {
             <AddIcon color="primary" fontSize="small" />
 
         return (
-            <ul className="list" >
+            <ul className="list" key={strNodeKey}>
                 <span className="list__icon" onClick={() => onToggle(strNodeKey)}>
                     {toggleButton}
                     <span>Objects inside: {Object.keys(object).length} </span>
@@ -71,10 +71,10 @@ const JSONTree = ({ data = {} }) => {
     const isVisible = Object.keys(cursor).some((key) => cursor[key]);
     return (
         <>
-            {isVisible 
-            && <Button variant="contained" type="submit" onClick={onToggleAll}>
-                {allStatus.text}
-            </Button>}
+            {isVisible
+                && <Button variant="contained" type="submit" onClick={onToggleAll}>
+                    {allStatus.text}
+                </Button>}
             {list}
         </>
     )
@@ -82,4 +82,4 @@ const JSONTree = ({ data = {} }) => {
 JSONTree.propTypes = {
     data: PropTypes.object.isRequired
 }
-export default React.memo(JSONTree);
+export default JSONTree;
