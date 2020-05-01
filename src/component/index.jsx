@@ -72,7 +72,7 @@ const JSONTree = ({ data = {} }) => {
     return (
         <>
             {isVisible
-                && <Button variant="contained" type="submit" onClick={onToggleAll}>
+                && <Button id='status-list' variant="contained" type="submit" onClick={onToggleAll}>
                     {allStatus.text}
                 </Button>}
             {list}
