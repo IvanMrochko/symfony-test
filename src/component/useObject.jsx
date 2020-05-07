@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+
 const flatObject = (data) => {
     let state = {};
     function flatting(object) {
         Object.values(object).map((value, index) => {
-            if (Object.getPrototypeOf(value).constructor === Object) {
+            if (typeof (value) === 'object') {
                 state[JSON.stringify(value)] = false;
                 return flatting(value);
             }
@@ -13,6 +14,7 @@ const flatObject = (data) => {
     flatting(data);
     return state;
 }
+
 const useJSON = (initial) => {
     let [state, setState] = useState({});
 
@@ -32,6 +34,7 @@ const useJSON = (initial) => {
         }, {});
         setState(newObj);
     }
+
     return [state, setStateObject, setAll]
 }
 export { useJSON }
